@@ -1,0 +1,12 @@
+{% extends 'driver/base.html' %}
+
+{% block content %}
+<ul class="list-group mt-5">
+    <li class="list-group-item">会社：{{ driver.company }}</li>
+    <li class="list-group-item">{{ driver.name }}</li>
+    <li class="list-group-item">{{ driver.age }}歳</li>
+    <li class="list-group-item">{{ driver.get_gender_display }}</li>
+    <li class="list-group-item">電話番号：{{ driver.phone }}</li>
+    <li class="list-group-item">コース：{% for course in driver.course.all %}{{ course }}, {% endfor %}</li>  
+</ul>
+{% endblock %}
